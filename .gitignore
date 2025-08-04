@@ -1,0 +1,10 @@
+bin/
+*.enc
+*.tmp
+.env
+.env.*
+!testdata/
+*.test
+coverage.out
+*.out
+dist/
