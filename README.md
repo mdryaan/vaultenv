@@ -28,19 +28,7 @@
 
 ## Architecture
 
-```mermaid
-graph TD
-    CLI[CLI Commands<br/>cobra] --> CFG[config<br/>path resolution]
-    CLI --> PROMPT[prompt<br/>term password input]
-    CLI --> OUTPUT[output<br/>table / json / pretty]
-    CLI --> DOTENV[dotenv<br/>parser / writer]
-    CLI --> VAULT[vault<br/>open / save / CRUD]
-    VAULT --> CRYPTO[crypto<br/>Encrypt / Decrypt]
-    CRYPTO --> AES[aes<br/>AES-256-GCM]
-    CRYPTO --> ARGON[argon2<br/>Argon2id KDF]
-    VAULT --> STORE[store<br/>VaultData JSON]
-    STORE --> ATOMIC[atomic write<br/>.tmp + rename]
-```
+![Architecture diagram](./docs/architecture.png)
 
 ---
 
@@ -183,9 +171,3 @@ Example GitHub Actions step:
 | CI/CD friendly | ✅ | ✅ | ✅ | ✅ |
 | Open source | ✅ | ✅ | ✅ | ❌ |
 | Free | ✅ | ✅ | ✅ | ❌ |
-
----
-
-## License
-
-MIT — see [LICENSE](LICENSE)
